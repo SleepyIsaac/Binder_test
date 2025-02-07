@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y \
     libpulse0 \
     && rm -rf /var/lib/apt/lists/*
 
-# 下载 3D Slicer
-RUN wget -qO- http://download.slicer.org/bitstream/640743 | tar xvj -C /opt \
-    && mv /opt/Slicer-* /opt/Slicer
+RUN wget -O /tmp/Slicer.tar.gz https://download.slicer.org/bitstream/679325961357655fd585ffb5 && \
+    tar -xvzf /tmp/Slicer.tar.gz -C /opt && \
+    mv /opt/Slicer-* /opt/Slicer
 
 RUN /opt/Slicer/Slicer --launch ExtensionManager --install SlicerSwissSkullStripper
 
