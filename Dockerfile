@@ -5,6 +5,10 @@ RUN apt-get update && apt-get install -y \
     bzip2 \
     xvfb \
     libpulse0 \
+    libxrender1 \
+    libxcb-shm0 \
+    libxcb-xfixes0 \
+    libfontconfig1 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget -O /tmp/Slicer.tar.gz https://download.slicer.org/bitstream/679325961357655fd585ffb5 && \
